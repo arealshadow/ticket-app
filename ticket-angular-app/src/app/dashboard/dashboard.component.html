@@ -1,5 +1,20 @@
-<div *ngFor="let customer of customerInfo">
-
-    <h1>{{customer.id}}</h1>
-    <h1>{{customer.email}}</h1>
+<div >
+    <table style="width:100%">
+        <tr>
+            <th>#</th>
+            <th>Ticket ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let customer of customerInfo">
+            <td>{{customer.id}}</td>
+            <td>{{customer.ticketID}}</td>
+            <td>{{customer.name.first}}</td>
+            <td>{{customer.name.last}}</td>
+            <td>{{customer.email}}</td>
+        </tr>
+        
+      </table>
 </div>
+
