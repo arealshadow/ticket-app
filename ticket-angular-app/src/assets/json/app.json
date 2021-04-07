@@ -5,64 +5,76 @@
       "totalResults": 10,
       "resultsPerPage": 5
     },
-    "loggedUser": [
-        {
-            "admin": {
-                "id": 1, 
-                "name": {
-                    "title": "Mr",
-                    "first": "Admin",
-                    "last": "Adminov"
-                    },
-                "email": "adminov@unisure.com",
-                "login": {
-                    "username": "happyostrich661",
-                    "password": "phish1"
+    "loggedUser": {
+        "admin": {
+            "id": 1, 
+            "name": {
+                "title": "Mr",
+                "first": "Admin",
+                "last": "Adminov"
                 },
-                "phone": "+1 (953) 464-2288",
-                "picture": "http://placehold.it/32x32",
-                "numberOfBookings": 10
-            }
+            "email": "adminov@unisure.com",
+            "login": {
+                "username": "happyostrich661",
+                "password": "phish1"
+            },
+            "phone": "+1 (953) 464-2288",
+            "picture": "http://placehold.it/32x32",
+            "numberOfBookings": 10
         },
-        {
-            "customer": {
-                "id": 1, 
-                "ticketID": "5465321123@!#41435",
-                "name": {
-                    "title": "Mr",
-                    "first": "Jayden",
-                    "last": "Brown"
-                    },
-                "location": {
-                    "street": {
-                        "number": 3846,
-                        "name": "22nd Ave"
-                    },
-                    "city": "Lasalle",
-                    "state": "Newfoundland and Labrador",
-                    "country": "Canada",
-                    "postcode": "R0Q 7X4",
-                    "coordinates": {
-                        "latitude": "-61.9631",
-                        "longitude": "-31.2562"
-                    }
+        "customer": {
+            "id": 1, 
+            "ticketID": "5465321123@!#41435",
+            "name": {
+                "title": "Mr",
+                "first": "Jayden",
+                "last": "Brown"
                 },
-                "email": "jayden.brown@example.com",
-                "login": {
-                    "username": "happyostrich661",
-                    "password": "phish1"
+            "location": {
+                "street": {
+                    "number": 3846,
+                    "name": "22nd Ave"
                 },
-                "phone": "549-671-6923",
-                "arrivalDate": "7/4/2021",
-                "arrivalTime": "21:38",
-                "approvalStatus": "Denied",
-                "picture": "http://placehold.it/32x32",
-                "registered": "2015-01-28T01:19:23 -02:00"
-            }
-            
-            
-        }
-    ],
+                "city": "Lasalle",
+                "state": "Newfoundland and Labrador",
+                "country": "Canada",
+                "postcode": "R0Q 7X4",
+                "coordinates": {
+                    "latitude": "-61.9631",
+                    "longitude": "-31.2562"
+                }
+            },
+            "email": "jayden.brown@example.com",
+            "login": {
+                "username": "happyostrich661",
+                "password": "phish1"
+            },
+            "phone": "549-671-6923",
+            "bookingInfo": [
+                {   
+                    "id": 1,
+                    "type": "Regular Haircut",
+                    "registered": "2015-01-28T01:19:23 -02:00",
+                    "arrivalDate": "7/4/2021",
+                    "arrivalTime": "21:30",
+                    "departureTime": "22:00",
+                    "approvalStatus": "Denied"
+                
+                },
+                { 
+                    "id": 2,
+                    "type": "Haircut and Beard",
+                    "registered": "2015-01-28T01:19:23 -02:00",
+                    "arrivalDate": "20/4/2021",
+                    "arrivalTime": "20:30",
+                    "departureTime": "22:00",
+                    "approvalStatus": "In Progress"
+                }
+            ],
+            "picture": "http://placehold.it/32x32",
+            "registered": "2015-01-28T01:19:23 -02:00"
+        }  
+    },
     "ticketInfo": [
       {
         "id": 1,
