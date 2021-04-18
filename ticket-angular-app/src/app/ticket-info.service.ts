@@ -10,10 +10,11 @@ import  {environment} from '../environments/environment';
   providedIn: 'root'
 })
 export class TicketInfoService {
-  private url = environment.apiUrl;
+  private url = environment.apiUrl ;
 
   constructor(private http: HttpClient) { }
   getTicketApi(): Observable<TicketInfo> {
-    return this.http.get<TicketInfo>(this.url);
+    var urlAllTickets= this.url + "app.json";
+    return this.http.get<TicketInfo>(urlAllTickets);
   }
 }

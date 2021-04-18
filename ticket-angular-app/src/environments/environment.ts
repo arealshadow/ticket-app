@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "../assets/json/app.json"
+  apiUrl: "../assets/json/"
 };
 
 /*
