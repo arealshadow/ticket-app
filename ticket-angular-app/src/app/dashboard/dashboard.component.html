@@ -1,4 +1,4 @@
-<div >
+<div>
     <table style="width:100%">
         <tr>
             <th>#</th>
@@ -6,6 +6,7 @@
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
+            <th>Picture</th>
         </tr>
         <tr *ngFor="let customer of customerInfo">
             <td>{{customer.id}}</td>
@@ -13,6 +14,7 @@
             <td>{{customer.name.first}}</td>
             <td>{{customer.name.last}}</td>
             <td>{{customer.email}}</td>
+            <td><img src="{{customer.picture}}" alt="Customer picture"></td>
         </tr>
         
       </table>
