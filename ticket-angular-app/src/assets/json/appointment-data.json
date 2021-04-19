@@ -1,0 +1,54 @@
+{
+    "appointments": [
+        {
+            "date": "19-04-2021",
+            "meetings": [
+                {
+                    "start-hour": "13:00",
+                    "end-hour": "14:00",
+                    "duration": "01:30",
+                    "email": "luigi.jakobs@example.com",
+                    "name": {
+                        "first": "Luigi",
+                        "last": "Jakobs"
+                    },
+
+                    "services": [
+                        {
+                            "id": "1",
+                            "name": "Gentelman's Choice"
+                        }
+                    ]    
+
+                }
+            ]
+        },
+        {
+            "date": "20-04-2021",
+            "meetings": [
+                {
+                    "start-hour": "15:00",
+                    "end-hour": "15:30",
+                    "duration": "00:30",
+                    "email": "kurt.freeman@example.com",
+                    "name": {
+                        "first": "Kurt",
+                        "last": "Freeman"
+                    },
+
+                    "services": [
+                        {
+                            "id": "1",
+                            "name": "Head Shave"
+                        },
+                        {
+                            "id": "2",
+                            "name": "Beardtrim"
+                        }
+                    ]    
+
+                }
+            ]
+        }
+    ]
+}
