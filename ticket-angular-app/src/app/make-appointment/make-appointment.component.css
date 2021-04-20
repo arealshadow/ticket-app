@@ -1,3 +1,8 @@
-body {
-  height: 100%;
+.appointment-content {
+  color: #fff;
+  background-color: #1f2d40;
+}
+
+.txt-cntr {
+  text-align: center;
 }

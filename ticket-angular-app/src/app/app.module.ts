@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -9,7 +11,9 @@ import { RouterModule } from '@angular/router';
 
 //primeNg imports
 import {TabMenuModule} from 'primeng/tabmenu';
-import {MenubarModule} from 'primeng/menubar';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputMaskModule} from 'primeng/inputmask';
 
 //calendar IMPORTS
 import { FullCalendarModule } from '@fullcalendar/angular'; 
@@ -31,6 +35,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'make-appointment', component: MakeAppointmentComponent},
@@ -39,8 +45,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
       {path: '', redirectTo: '/make-appointment', pathMatch: 'full'},
     ]),
     TabMenuModule, 
-    MenubarModule,
-    FullCalendarModule
+    MultiSelectModule,
+    FullCalendarModule,
+    InputTextModule,
+    InputMaskModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

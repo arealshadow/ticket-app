@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { Component, OnInit } from '@angular/core';
+import {MenuItem, PrimeNGConfig} from 'primeng/api';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ticket-angular-app';
   
   menuItems: MenuItem[];
   activeItem: MenuItem;
 
+  constructor(private primengConfig: PrimeNGConfig) {}
   
   ngOnInit(): void {
     this.menuItems = [
@@ -22,6 +24,10 @@ export class AppComponent {
   ];
 
   this.activeItem = this.menuItems[0];
+
+  this.primengConfig.ripple = true;
   }
+
+  
 
 }

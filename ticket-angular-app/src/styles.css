@@ -1,4 +1,5 @@
-body {
+body,
+html {
   background-color: #17212f;
 }
 
@@ -13,20 +14,19 @@ body {
 
 .fc {
   background-color: #1f2d40;
-  margin: 5px;
-  padding: 10px;
+
   color: #fff;
 }
 
 /* .fc-dayGrid-view .fc-body .fc-row {
   min-height: 2em;
-  height: 100% !important;
-} */
+  height: 50% !important;
+}
 
 .fc-view-container *,
 .fc-view-container :after,
 .fc-view-container :before {
   box-sizing: content-box;
-  height: 100% !important;
+  height: 50% !important;
   overflow: unset !important;
-}
+} */

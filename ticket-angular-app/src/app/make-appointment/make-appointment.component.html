@@ -1,1 +1,29 @@
-<full-calendar [options]="calendarOptions"></full-calendar>
+<div class="p-grid appointment-content p-text-center">
+    
+    <div class="p-col">
+        <h1>Make an appointment</h1>
+        <h3>First Name*</h3>
+        <input type="text" pInputText />
+        <h3>Last Name*</h3>
+        <input type="text" pInputText />
+        <h3>Email*</h3>
+        <input type="text" pInputText />
+        <h3>Phone*</h3>
+        <p-inputMask mask="(+40) 999-9999" placeholder="(+40) 999-9999"></p-inputMask>
+        
+        <h3>Select time</h3>
+        <div class="p-input-outlined">
+            <input type="text" pInputText>
+        </div>  
+        <h3>Select service</h3>
+        <p-multiSelect [options]="services" [(ngModel)]="selectedServices" optionLabel="name"></p-multiSelect>
+        
+
+
+    </div>
+    <div class="p-col">
+        <h3>Select date</h3>
+        <full-calendar [options]="calendarOptions"></full-calendar>
+    </div>
+    
+</div>

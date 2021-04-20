@@ -6,7 +6,9 @@ import {TicketInfoService} from '../ticket-info.service';
 import { CalendarOptions } from '@fullcalendar/angular';
 
 
-
+interface Service {
+  name: string
+}
 
 @Component({
   selector: 'app-make-appointment',
@@ -14,7 +16,9 @@ import { CalendarOptions } from '@fullcalendar/angular';
   styleUrls: ['./make-appointment.component.css']
 })
 export class MakeAppointmentComponent implements OnInit {
- 
+  services: Service[];
+  selectedServices: Service[];
+
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     timeZone: 'local',
@@ -34,7 +38,15 @@ export class MakeAppointmentComponent implements OnInit {
     alert('date click! ' + arg.dateStr)
   }
 
-  constructor() { }
+  constructor() {
+    this.services = [
+      {name: 'New York'},
+      {name: 'Rome'},
+      {name: 'London'},
+      {name: 'Istanbul'},
+      {name: 'Paris'}
+    ];
+   }
 
   ngOnInit(): void {
     
