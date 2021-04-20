@@ -10,9 +10,16 @@ import { RouterModule } from '@angular/router';
 //primeNg imports
 import {TabMenuModule} from 'primeng/tabmenu';
 import {MenubarModule} from 'primeng/menubar';
-import {FullCalendarModule} from 'primeng/fullcalendar';
 
+//calendar IMPORTS
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 
 @NgModule({
