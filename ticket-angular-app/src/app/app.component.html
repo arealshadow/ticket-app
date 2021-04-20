@@ -1,5 +1,7 @@
-<div>
-  <h1>Hello, Admin</h1>
-  <h2>This is the main page</h2>
-  <app-dashboard></app-dashboard>
+<div class="mainMenu">
+  <p-tabMenu [model]="menuItems" [activeItem]="activeItem"></p-tabMenu>
+  
+</div>
+<div class="mainContent">
+  <router-outlet></router-outlet>
 </div>

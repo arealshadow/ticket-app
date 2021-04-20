@@ -1,0 +1,13 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+.mainMenu {
+  height: 10%;
+}
+
+.mainContent {
+  height: 90%;
+  width: 100%;
+}

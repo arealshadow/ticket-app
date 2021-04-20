@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #17212f;
+}
+
+.p-tabmenu {
+  background-color: #1f2d40;
+  padding: 10px;
+}
+
+.txt-clr {
+  color: #ffd54f;
+}
+
+.fc {
+  background-color: #1f2d40;
+  margin: 5px;
+  padding: 10px;
+  color: #fff;
+}
+
+/* .fc-dayGrid-view .fc-body .fc-row {
+  min-height: 2em;
+  height: 100% !important;
+} */
+
+.fc-view-container *,
+.fc-view-container :after,
+.fc-view-container :before {
+  box-sizing: content-box;
+  height: 100% !important;
+  overflow: unset !important;
+}
