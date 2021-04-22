@@ -1,10 +1,18 @@
 body,
 html {
-  background-color: #17212f;
+  /* background-color: #17212f; */
+
+  background-image: url("assets/images/main/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 .p-tabmenu {
-  background-color: #1f2d40;
+  /* background-color: #1f2d40d3; */
   padding: 10px;
 }
 
@@ -13,7 +21,7 @@ html {
 }
 
 .fc {
-  background-color: #1f2d40;
+  /* background-color: #1f2d40b2; */
 
   color: #fff;
 }
@@ -30,3 +38,46 @@ html {
   height: 50% !important;
   overflow: unset !important;
 } */
+
+.fc .fc-view-harness {
+  flex-grow: 1;
+  position: relative;
+  /* height: 100% !important; */
+}
+
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  border: solid #304562;
+  border-width: 0 0 2px 0;
+  border-color: transparent transparent #304562 transparent;
+  background: none;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  font-weight: 600;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  transition: box-shadow 0.2s;
+  margin: 0 0 -2px 0;
+}
+
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  background: none;
+  border-color: #ffd54f;
+  color: #ffd54f;
+}
+
+.p-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.p-tabmenu
+  .p-tabmenu-nav
+  .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover
+  .p-menuitem-link {
+  background: none !important;
+  border-color: #ffd54f;
+  color: rgb(255, 255, 255);
+}

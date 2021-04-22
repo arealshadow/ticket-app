@@ -3,12 +3,19 @@ html {
   height: 100%;
   width: 100%;
 }
-.mainMenu {
-  height: 10%;
+.mainBackground {
+  height: 100%;
   width: 100%;
+  background-color: #1f2d40d3;
+}
+.mainMenu {
+  height: 6%;
+  width: 100%;
+  background-color: #1f2d40d3;
 }
 
 .mainContent {
-  height: 90%;
+  height: 94%;
   width: 100%;
+  background-color: #1f2d40d3;
 }
