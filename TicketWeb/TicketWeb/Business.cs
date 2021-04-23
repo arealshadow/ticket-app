@@ -10,6 +10,7 @@ namespace TicketWeb
         public Business()
         {
             BusinessDays = new HashSet<BusinessDay>();
+            BusinessServices = new HashSet<BusinessService>();
         }
 
         public long Idb { get; set; }
@@ -17,5 +18,6 @@ namespace TicketWeb
         public string Timezone { get; set; }
 
         public virtual ICollection<BusinessDay> BusinessDays { get; set; }
+        public virtual ICollection<BusinessService> BusinessServices { get; set; }
     }
 }

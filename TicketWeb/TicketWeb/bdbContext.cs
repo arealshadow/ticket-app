@@ -19,6 +19,7 @@ namespace TicketWeb
 
         public virtual DbSet<Business> Businesses { get; set; }
         public virtual DbSet<BusinessDay> BusinessDays { get; set; }
+        public virtual DbSet<BusinessService> BusinessServices { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -63,6 +64,21 @@ namespace TicketWeb
                     .HasForeignKey(d => d.IdBusiness)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_BusinessDay_Business");
+            });
+
+            modelBuilder.Entity<BusinessService>(entity =>
+            {
+                entity.HasKey(e => e.IdServiceBusiness);
+
+                entity.Property(e => e.ServiceName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
+
+                entity.HasOne(d => d.IdBusinessNavigation)
+                    .WithMany(p => p.BusinessServices)
+                    .HasForeignKey(d => d.IdBusiness)
+                    .HasConstraintName("FK_BusinessServices_Business");
             });
 
             OnModelCreatingPartial(modelBuilder);
