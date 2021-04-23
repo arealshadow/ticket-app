@@ -2,10 +2,25 @@
     "business": [
         {
             "name": "Beauty Salon#1",
-            "start-week": "01-04-2021",
-            "end-week": "30-04-2021",
-            "start-hour": "08:30",
-            "end-hour": "21:30",
+            "work-week": [
+                {
+                    "idDay": 1,
+                    "availability": true,
+                    "startTime": "10:30",
+                    "endTime": "18:00" 
+
+                },
+                {
+                    "idDay": 2,
+                    "availability": false
+                },
+                {
+                    "idDay": 3,
+                    "availability": true,
+                    "startTime": "08:30",
+                    "endTime": "18:00" 
+                }
+            ],
             "timezone": "GMT+3",
             "duration": "00:30",
             "services": [
