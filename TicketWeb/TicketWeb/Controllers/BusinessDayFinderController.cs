@@ -22,6 +22,10 @@ namespace TicketWeb.Controllers
         {
             return _context.BusinessDays.Where(it => it.IdBusiness == IdBusiness).ToArray();
         }
-        
+        [HttpGet("{IdBusiness}")]
+        public BusinessService [] GetBusinessServices(long IdBusiness)
+        {
+            return _context.BusinessServices.Where(it => it.IdBusiness == IdBusiness).ToArray();
+        } 
     }
 }

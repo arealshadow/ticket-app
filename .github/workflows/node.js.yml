@@ -31,3 +31,8 @@ jobs:
         npm i
         ng build --prod --output-path ang1
         ls -lh ang1
+        
+    - uses: actions/upload-artifact@v2
+        with:
+            name: angularArtefact
+            path: ticket-angular-app/ang1
