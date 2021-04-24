@@ -33,6 +33,6 @@ jobs:
         ls -lh ang1
         
     - uses: actions/upload-artifact@v2
-        with:
-            name: angularArtefact
-            path: ticket-angular-app/ang1
+      with:
+        name: angularArtefact
+        path: ticket-angular-app/ang1
