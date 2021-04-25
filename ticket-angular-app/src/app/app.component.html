@@ -1,4 +1,18 @@
-<span class="mainBackground">
+<div class="p-grid">
+  <div class="p-col mainMenu">
+    <p-tabMenu [model]="menuItems" [activeItem]="activeItem">
+    </p-tabMenu>
+
+  </div>
+</div>
+<div class="p-grid">
+  <div class="p-col-fixed mainContent">
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
+
+<!-- <span class="mainBackground">
   <div class="mainMenu">
     <p-tabMenu [model]="menuItems" [activeItem]="activeItem"></p-tabMenu>
     
@@ -6,4 +20,4 @@
   <div class="mainContent">
     <router-outlet></router-outlet>
   </div>
-</span>
+</span> -->

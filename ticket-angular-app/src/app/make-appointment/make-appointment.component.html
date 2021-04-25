@@ -1,7 +1,13 @@
+<div class="p-grid p-text-center">
+    <div class="p-col">
+        <h1>Make an appointment</h1>
+    </div>
+</div>
+
 <div class="p-grid appointment-content p-text-center">
     
     <div class="p-col">
-        <h1>Make an appointment</h1>
+        
         <h3>First Name*</h3>
         <input type="text" pInputText />
         <h3>Last Name*</h3>
@@ -10,20 +16,41 @@
         <input type="text" pInputText />
         <h3>Phone*</h3>
         <p-inputMask mask="(+40) 999-999-999" placeholder="(+40) 999-9999"></p-inputMask>
-        
-        <h3>Select time</h3>
-        <div class="p-input-outlined">
-            <input type="text" pInputText>
-        </div>  
         <h3>Select service</h3>
         <p-multiSelect [options]="services" [(ngModel)]="selectedServices" optionLabel="name"></p-multiSelect>
+
+        <!-- captcha todo -->
+        <!-- <p-captcha siteKey="YOUR_SITE_KEY" (onResponse)="showResponse($event)"></p-captcha> -->
+
         
 
 
     </div>
     <div class="p-col">
         <h3>Select date</h3>
-        <full-calendar [options]="calendarOptions"></full-calendar>
+        <p-calendar [(ngModel)]="value" [inline]="true" required="true">
+            <ng-template pTemplate="date" let-date>
+                <span [ngStyle]="{
+                    'color': (date.day < 21 && date.day > 10) ? 'yellow' : 'red',
+                    textDecoration: (date.day < 21 && date.day > 10) ? 'inherit' : 'line-through',
+                    'font-weight': (date.day < 21 && date.day > 10) ? 'bold' : 'normal'
+                }">{{date.day}}</span>
+            </ng-template>
+        </p-calendar>
+        <p>Date in red is occupied / Date in yellow is available.</p>
+
+        <h3>Select time</h3>
+        <p-calendar [(ngModel)]="value" [timeOnly]="true" inputId="timeonly" hourFormat="24" required="true"></p-calendar>
     </div>
     
+</div>
+
+<div class="p-grid p-text-center">
+    <div class="p-col">
+        <p-toast></p-toast>
+
+        <p-confirmPopup></p-confirmPopup>
+
+        <button (click)="confirm($event)" pButton icon="pi pi-check" label="Confirm"></button>
+    </div>
 </div>

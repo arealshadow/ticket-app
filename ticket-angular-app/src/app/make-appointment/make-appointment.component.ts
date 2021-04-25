@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerData } from '../ticket-data/CustomerData';
-import {TicketInfoService} from '../ticket-info.service';
 
-//Calendar imports
-import { CalendarOptions } from '@fullcalendar/angular';
+//primeng imports
+import {ConfirmationService, MessageService} from 'primeng/api';
+
 
 
 interface Service {
@@ -13,32 +12,26 @@ interface Service {
 @Component({
   selector: 'app-make-appointment',
   templateUrl: './make-appointment.component.html',
-  styleUrls: ['./make-appointment.component.css']
+  styleUrls: ['./make-appointment.component.css'],
+  providers: [ConfirmationService, MessageService]
 })
 export class MakeAppointmentComponent implements OnInit {
   services: Service[];
   selectedServices: Service[];
+  value: Date;
 
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    timeZone: 'local',
-    dateClick: this.handleDateClick.bind(this),
-    headerToolbar: {
-      left: 'prev,next',
-      center: 'title',
-      right: 'today'
-    },
-    events: [
-      { title: 'event 1', date: '2021-04-01' },
-      { title: 'event 2', date: '2021-04-02' }
-    ]
-  }
 
-  handleDateClick(arg) {
-    alert('date click! ' + arg.dateStr)
-  }
+//captcha todo
+//   showResponse(response) {
+//     //call to a backend to verify against recaptcha with private key
+// }
 
-  constructor() {
+
+
+  constructor(
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
+    ) {
     this.services = [
       {name: 'New York'},
       {name: 'Rome'},
@@ -47,6 +40,20 @@ export class MakeAppointmentComponent implements OnInit {
       {name: 'Paris'}
     ];
    }
+
+   confirm(event: Event) {
+    this.confirmationService.confirm({
+        target: event.target,
+        message: 'Are you sure that you want to proceed?',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+            this.messageService.add({severity:'info', summary:'Confirmed', detail:'You have accepted'});
+        },
+        reject: () => {
+            this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
+        }
+    });
+  }
 
   ngOnInit(): void {
     

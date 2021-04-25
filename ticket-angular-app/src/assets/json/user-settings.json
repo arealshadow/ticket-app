@@ -22,23 +22,26 @@
                 }
             ],
             "timezone": "GMT+3",
-            "duration": "00:30",
             "services": [
                 {
                     "id": 1,
-                    "name": "Haircut & Blowdry"
+                    "name": "Haircut & Blowdry",
+                    "duration": "00:30"
                 },
                 {
                     "id": 2,
-                    "name": "Express Cut"
+                    "name": "Express Cut",
+                    "duration": "00:30"
                 },
                 {
                     "id": 3,
-                    "name": "Clipper Cut"
+                    "name": "Clipper Cut",
+                    "duration": "00:30"
                 },
                 {
                     "id": 4,
-                    "name": "Haircut & Wash"
+                    "name": "Haircut & Wash",
+                    "duration": "00:30"
                 }
             ]
         },
