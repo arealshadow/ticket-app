@@ -1,3 +1,5 @@
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
 body,
 html {
   /* background-color: #17212f; */
@@ -19,31 +21,6 @@ html {
 
 .txt-clr {
   color: #ffd54f;
-}
-
-.fc {
-  /* background-color: #1f2d40b2; */
-
-  color: #fff;
-}
-
-/* .fc-dayGrid-view .fc-body .fc-row {
-  min-height: 2em;
-  height: 50% !important;
-}
-
-.fc-view-container *,
-.fc-view-container :after,
-.fc-view-container :before {
-  box-sizing: content-box;
-  height: 50% !important;
-  overflow: unset !important;
-} */
-
-.fc .fc-view-harness {
-  flex-grow: 1;
-  position: relative;
-  /* height: 100% !important; */
 }
 
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {

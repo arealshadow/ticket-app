@@ -1,63 +1,58 @@
 import { Component, OnInit } from '@angular/core';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzButtonSize } from 'ng-zorro-antd/button';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-//primeng imports
-import {ConfirmationService, MessageService} from 'primeng/api';
 
 
 
-interface Service {
-  name: string
-}
+
 
 @Component({
   selector: 'app-make-appointment',
   templateUrl: './make-appointment.component.html',
-  styleUrls: ['./make-appointment.component.css'],
-  providers: [ConfirmationService, MessageService]
+  styleUrls: ['./make-appointment.component.css']
+  
 })
 export class MakeAppointmentComponent implements OnInit {
-  services: Service[];
-  selectedServices: Service[];
-  value: Date;
+  
+  size: NzButtonSize = 'large';
+  validateForm!: FormGroup;
 
+  value?: string;
+  time = new Date();
+  selectedValue = new Date();
+  date = null;
 
-//captcha todo
-//   showResponse(response) {
-//     //call to a backend to verify against recaptcha with private key
-// }
+  selectChange(select: Date): void {
+    console.log(`Select value: ${select}`);
+    this.selectedValue = select;
+  }
+ 
+  
 
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
+    
+  }
+  cancel(): void {
+    this.nzMessageService.info('click cancel');
+  }
 
-
+  confirm(): void {
+    this.nzMessageService.info('click confirm');
+  } 
+  
   constructor(
-    private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private nzMessageService: NzMessageService
     ) {
-    this.services = [
-      {name: 'New York'},
-      {name: 'Rome'},
-      {name: 'London'},
-      {name: 'Istanbul'},
-      {name: 'Paris'}
-    ];
+    
    }
 
-   confirm(event: Event) {
-    this.confirmationService.confirm({
-        target: event.target,
-        message: 'Are you sure that you want to proceed?',
-        icon: 'pi pi-exclamation-triangle',
-        accept: () => {
-            this.messageService.add({severity:'info', summary:'Confirmed', detail:'You have accepted'});
-        },
-        reject: () => {
-            this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
-        }
-    });
-  }
+   
 
   ngOnInit(): void {
     
-
     
 
   }

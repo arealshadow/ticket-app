@@ -1,56 +1,76 @@
-<div class="p-grid p-text-center">
-    <div class="p-col">
+<div nz-row>
+    <div nz-col nzSpan="24">
         <h1>Make an appointment</h1>
     </div>
 </div>
 
-<div class="p-grid appointment-content p-text-center">
+<div nz-row>
     
-    <div class="p-col">
+    <div nz-col nzSpan="12">
         
         <h3>First Name*</h3>
-        <input type="text" pInputText />
+        <input nz-input [(ngModel)]="value" style="width: 200px;"/>
         <h3>Last Name*</h3>
-        <input type="text" pInputText />
+        <input nz-input [(ngModel)]="value" style="width: 200px;"/>
         <h3>Email*</h3>
-        <input type="text" pInputText />
-        <h3>Phone*</h3>
-        <p-inputMask mask="(+40) 999-999-999" placeholder="(+40) 999-9999"></p-inputMask>
+        
+        <form nz-form [formGroup]="validateForm">
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+                    <input nz-input formControlName="email" id="email" />
+                </nz-form-control>
+            </nz-form-item>
+          </form>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            [nzValidateStatus]="validateForm.controls['phoneNumber']"
+            nzErrorTip="Please input your phone number!"
+          >
+            <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+              <ng-template #addOnBeforeTemplate>
+                <nz-select formControlName="phoneNumberPrefix" class="phone-select">
+                  <nz-option nzLabel="+86" nzValue="+40"></nz-option>
+                  <nz-option nzLabel="+87" nzValue="+87"></nz-option>
+                </nz-select>
+              </ng-template>
+              <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
+            </nz-input-group>
+          </nz-form-control>
         <h3>Select service</h3>
-        <p-multiSelect [options]="services" [(ngModel)]="selectedServices" optionLabel="name"></p-multiSelect>
-
-        <!-- captcha todo -->
-        <!-- <p-captcha siteKey="YOUR_SITE_KEY" (onResponse)="showResponse($event)"></p-captcha> -->
+        
 
         
 
 
     </div>
-    <div class="p-col">
+    <div nz-col nzSpan="12">
         <h3>Select date</h3>
-        <p-calendar [(ngModel)]="value" [inline]="true" required="true">
-            <ng-template pTemplate="date" let-date>
-                <span [ngStyle]="{
-                    'color': (date.day < 21 && date.day > 10) ? 'yellow' : 'red',
-                    textDecoration: (date.day < 21 && date.day > 10) ? 'inherit' : 'line-through',
-                    'font-weight': (date.day < 21 && date.day > 10) ? 'bold' : 'normal'
-                }">{{date.day}}</span>
-            </ng-template>
-        </p-calendar>
-        <p>Date in red is occupied / Date in yellow is available.</p>
+        <nz-date-picker nzInline [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
 
+        <nz-alert nzMessage="Your selected date: {{ selectedValue }}"></nz-alert>
+        <p>Date in red is occupied / Date in yellow is available.</p>
         <h3>Select time</h3>
-        <p-calendar [(ngModel)]="value" [timeOnly]="true" inputId="timeonly" hourFormat="24" required="true"></p-calendar>
+        <nz-time-picker nzPlaceHolder="Start time" [(ngModel)]="time" nzFormat="HH:mm"></nz-time-picker>
+        <nz-time-picker nzPlaceHolder="End time" [(ngModel)]="time" nzFormat="HH:mm"></nz-time-picker>
     </div>
     
 </div>
 
-<div class="p-grid p-text-center">
-    <div class="p-col">
-        <p-toast></p-toast>
-
-        <p-confirmPopup></p-confirmPopup>
-
-        <button (click)="confirm($event)" pButton icon="pi pi-check" label="Confirm"></button>
+<div nz-row>
+    <div nz-col nzSpan="24">
+        <button
+        nz-button 
+        [nzSize]="size" 
+        nzType="default"
+        nz-popconfirm
+        nzPopconfirmTitle="Are you sure delete this task?"
+        nzPopconfirmPlacement="bottom"
+        (nzOnConfirm)="confirm()"
+        (nzOnCancel)="cancel()"
+        >Confirm</button>
+        
     </div>
 </div>

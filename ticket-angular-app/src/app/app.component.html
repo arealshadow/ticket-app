@@ -1,23 +1,26 @@
-<div class="p-grid">
-  <div class="p-col mainMenu">
-    <p-tabMenu [model]="menuItems" [activeItem]="activeItem">
-    </p-tabMenu>
-
+<div nz-row>
+  <div nz-col nzSpan="24" class="mainMenu">
+    <ul nz-menu nzMode="horizontal" nzTheme="dark">
+      <li nz-menu-item nzSelected routerLink="">
+        Home
+      </li>
+      <li nz-menu-item routerLink="/appointment">
+        Appointment
+      </li>
+      <li nz-menu-item routerLink="/admin-dashboard">
+        Admin Dashboard
+      </li>
+      <li nz-menu-item routerLink="/about-us">
+        About Us
+      </li>
+    </ul>
   </div>
 </div>
-<div class="p-grid">
-  <div class="p-col-fixed mainContent">
+<div nz-row>
+  <div nz-col nzSpan="24" class="mainContent">
     <router-outlet></router-outlet>
 
   </div>
 </div>
 
-<!-- <span class="mainBackground">
-  <div class="mainMenu">
-    <p-tabMenu [model]="menuItems" [activeItem]="activeItem"></p-tabMenu>
-    
-  </div>
-  <div class="mainContent">
-    <router-outlet></router-outlet>
-  </div>
-</span> -->
+
